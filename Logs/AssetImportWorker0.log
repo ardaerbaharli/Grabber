@@ -315,3 +315,11 @@ Received Import Request.
 Start importing Assets/Images/items/coin.png using Guid(c447b2c71dab64eef8e3038798324e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '328b4629a894c584dc131453c4cf9343') in 0.011328 seconds 
   Import took 0.013928 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 659.257709 seconds.
+  path: Assets/Scenes/1.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/1.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acfc5a6a8824bb02050e5306fad89524') in 0.004110 seconds 
+  Import took 0.030301 seconds .
+
