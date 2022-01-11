@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameController = FindObjectOfType<GameController>();
+
     }
 
     // Update is called once per frame
@@ -26,15 +26,15 @@ public class Item : MonoBehaviour
     {
         if(isBonusTime)
         {
-            gameController.time += 5;
+            gameController.BonusTime(5);
         }
         else if(isBomb)
         {
-            gameController.time -= 5;
+            gameController.MinusTime(-5);
         }
         else
         {
-            gameController.score += value;
+            gameController.BonusScore(value);
         }
     }
 }

@@ -47,4 +47,8 @@ public class GameController : MonoBehaviour
     {
         time -= amount;
     }
+    public void BonusScore(int value)
+    {
+        score += value;
+    }
 }
