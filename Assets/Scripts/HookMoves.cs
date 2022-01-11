@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class HookMoves : MonoBehaviour
 {
-    public float minRotationZ = -50, maxRotationZ = 50;
-    public float minPositionY = -4.5f;
-    public float rotationSpeed = 5f;
-    public float moveSpeed = 3f;
+    public float minRotationZ = -50, maxRotationZ = 50; //hook angles
+    public float minPositionY = -4.5f; //length of the rope Y-axis
+    public float rotationSpeed = 5f; //hook rotation speed
+    public float moveSpeed = 3f; //speed of the rope 
 
     private float initialPositionY;
     private float initialMoveSpeed;
@@ -30,7 +30,6 @@ public class HookMoves : MonoBehaviour
         isRotate = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Rotate();
@@ -73,23 +72,23 @@ public class HookMoves : MonoBehaviour
             return;
         if(!isRotate)
         {
-            Vector3 temp = transform.position;
+            Vector3 tempRopePosition = transform.position;
             if (isMoveDown)
-                temp -= transform.up * Time.deltaTime * moveSpeed; // up->y axis
+                tempRopePosition -= transform.up * Time.deltaTime * moveSpeed; // up->y axis
             else
-                temp += transform.up * Time.deltaTime * moveSpeed;
+                tempRopePosition += transform.up * Time.deltaTime * moveSpeed;
 
-            transform.position = temp;
+            transform.position = tempRopePosition;
 
-            if (temp.y <= minPositionY)
+            if (tempRopePosition.y <= minPositionY)
                 isMoveDown = false;
-            else if (temp.y > initialPositionY)
+            else if (tempRopePosition.y > initialPositionY)
             {
                 isRotate = true;
-                ropeRenderer.RenderLine(temp, false);
+                ropeRenderer.RenderLine(tempRopePosition, false);
                 moveSpeed = initialMoveSpeed;
             }
-            ropeRenderer.RenderLine(temp, true);
+            ropeRenderer.RenderLine(tempRopePosition, true);
         }
     }
 }
