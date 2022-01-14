@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private GameUIInteractions gameUIInteractions;
+
     public float time;
     public int score;
 
@@ -17,12 +20,19 @@ public class GameController : MonoBehaviour
         score = 0;
     }
 
+    private void Start()
+    {
+        StartPlaying();
+    }
+
     public void Update()
     {
         if (isPlaying)
         {
-            time -= Time.deltaTime;
-
+            if (time > 0)
+                time -= Time.deltaTime;
+            else
+                GameOver();
         }
     }
 
@@ -36,6 +46,8 @@ public class GameController : MonoBehaviour
     {
         isPlaying = false;
         isGameEnded = true;
+        PlayerPrefs.SetInt("Score", score);
+        gameUIInteractions.ShowGameOverPanel();
     }
 
     public void BonusTime(float amount)
@@ -47,7 +59,8 @@ public class GameController : MonoBehaviour
     {
         time -= amount;
     }
-    public void BonusScore(int value)
+
+    public void IncreaseScore(int value)
     {
         score += value;
     }
