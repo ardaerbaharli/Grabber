@@ -4,37 +4,20 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+
     public int weight;
     public int value;
     public bool isBonusTime;
     public bool isBomb;
 
-    GameController gameController;
+    public ItemType itemType;
 
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(isBonusTime)
-        {
-            gameController.BonusTime(5);
-        }
-        else if(isBomb)
-        {
-            gameController.MinusTime(-5);
-        }
-        else
-        {
-            gameController.BonusScore(value);
-        }
+        this.value = itemType.value;
+        this.weight = itemType.weight;
+        this.isBomb = itemType.isBomb;
+        this.isBonusTime = itemType.isBonusTime;
     }
 }
