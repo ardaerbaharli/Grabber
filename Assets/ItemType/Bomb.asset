@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e164d409a97bc4eb7b51376ab7ad53, type: 3}
   m_Name: Bomb
   m_EditorClassIdentifier: 
-  weight: 5
+  weight: 30
   value: 0
   isBonusTime: 0
   isBomb: 1
