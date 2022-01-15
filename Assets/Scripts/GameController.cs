@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -11,11 +12,11 @@ public class GameController : MonoBehaviour
     public bool isPlaying;
     public bool isGameEnded;
 
-    private const int TotalGameTime = 120;
+    private const int totalGameTime = 120;
 
     public void Awake()
     {
-        time = TotalGameTime;
+        time = totalGameTime;
         score = 0;
     }
 

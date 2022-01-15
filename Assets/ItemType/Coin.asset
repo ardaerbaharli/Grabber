@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e164d409a97bc4eb7b51376ab7ad53, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: 
-  weight: 30
+  weight: 10
   value: 30
   isBonusTime: 0
   isBomb: 0
