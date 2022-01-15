@@ -34,7 +34,7 @@ public class RopeRenderer : MonoBehaviour
         if(lineRenderer.enabled)
         {
             Vector3 temp = startPosition.position;
-            temp.z = -10f; //buraya bak
+            temp.z = -10f;
 
             startPosition.position = temp;
 
