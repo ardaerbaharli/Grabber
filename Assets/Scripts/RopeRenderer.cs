@@ -7,8 +7,7 @@ public class RopeRenderer : MonoBehaviour
     private LineRenderer lineRenderer;
 
     //Rope starting position
-    [SerializeField]
-    private Transform startPosition;
+    [SerializeField] private Transform startPosition;
 
     private float lineWidth = 0.05f;
 
@@ -18,9 +17,10 @@ public class RopeRenderer : MonoBehaviour
         lineRenderer.startWidth = lineWidth;
         lineRenderer.enabled = false;
     }
+
     public void RenderLine(Vector3 endPosition, bool enableRenderer)
     {
-        if(enableRenderer)
+        if (enableRenderer)
         {
             if (!lineRenderer.enabled)
                 lineRenderer.enabled = true;
@@ -31,7 +31,8 @@ public class RopeRenderer : MonoBehaviour
             if (lineRenderer.enabled)
                 lineRenderer.enabled = false;
         }
-        if(lineRenderer.enabled)
+
+        if (lineRenderer.enabled)
         {
             Vector3 temp = startPosition.position;
             temp.z = -10f; //buraya bak
@@ -43,10 +44,8 @@ public class RopeRenderer : MonoBehaviour
 
             endPosition = temp;
 
-            lineRenderer.SetPosition(0,startPosition.position);
+            lineRenderer.SetPosition(0, startPosition.position);
             lineRenderer.SetPosition(1, endPosition);
         }
     }
-
-
 }
