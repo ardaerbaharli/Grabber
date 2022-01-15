@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: b733550135b194993a41be911e14e99b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bai Jamjuree
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6425598130f804f83965037d45add9d0, type: 3}
+  - {fileID: 12800000, guid: 234474eb345ab4515996a30005fe64ca, type: 3}
+  - {fileID: 12800000, guid: 368c3c643d51443e4ac7ddb9b35012e6, type: 3}
+  - {fileID: 12800000, guid: d4e7d711b58ef4f849a85627ea0c358a, type: 3}
+  - {fileID: 12800000, guid: 733a59820794045b8bd49df2e16d2d17, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

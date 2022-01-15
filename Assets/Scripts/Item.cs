@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-
     public int weight;
     public int value;
     public bool isBonusTime;
     public bool isBomb;
 
-    public ItemType itemType;
+    [SerializeField] private GameController gameController;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        this.value = itemType.value;
-        this.weight = itemType.weight;
-        this.isBomb = itemType.isBomb;
-        this.isBonusTime = itemType.isBonusTime;
+        if (isBonusTime)
+        {
+            gameController.BonusTime(5);
+        }
+        else if (isBomb)
+        {
+            gameController.MinusTime(-5);
+        }
+        else
+        {
+            gameController.IncreaseScore(value);
+        }
     }
 }
