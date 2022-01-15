@@ -37,15 +37,11 @@ public class ToggleSwitch : MonoBehaviour, IPointerDownHandler
         {
             onText.color = onColor;
             offText.color = offColor;
-            // onText.DOColor(onColor, tweenTime);
-            // offText.DOColor(offColor, tweenTime);
         }
         else
         {
             onText.color = offColor;
             offText.color = onColor;
-            // onText.DOColor(offColor, tweenTime);
-            // offText.DOColor(onColor, tweenTime);
         }
     }
 
