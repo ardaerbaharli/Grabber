@@ -21,8 +21,11 @@ public class HookMoves : MonoBehaviour
 
     private RopeRenderer ropeRenderer;
 
+    private AudioSource audioSource;
+
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         ropeRenderer = GetComponent<RopeRenderer>();
     }
 
@@ -67,6 +70,7 @@ public class HookMoves : MonoBehaviour
 
             isRotate = false;
             isMoveDown = true;
+            audioSource.Play();
         }
     }
 
