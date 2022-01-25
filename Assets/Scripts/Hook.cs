@@ -20,6 +20,7 @@ public class Hook : MonoBehaviour
         }
 
         if (!col.CompareTag("Item")) return;
+        col.GetComponent<AudioSource>().Play();
 
         var itemTransform = col.transform;
         var item = itemTransform.GetComponent<Item>();

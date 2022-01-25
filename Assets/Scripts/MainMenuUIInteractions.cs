@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class MainMenuUIInteractions : MonoBehaviour
@@ -7,6 +8,10 @@ public class MainMenuUIInteractions : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
     [SerializeField] private ToggleSwitch soundToggle;
     [SerializeField] private ToggleSwitch vibrationToggle;
+
+    [SerializeField] string volumParameter = "MasterVolume";
+    [SerializeField] private AudioMixer mixer;
+
 
     private void Start()
     {
@@ -34,6 +39,9 @@ public class MainMenuUIInteractions : MonoBehaviour
     private void ToggleSound(bool value)
     {
         PlayerPrefsX.SetBool("Sound", value);
+        float volume = value ? 0f : -80f;
+        mixer.SetFloat(volumParameter, volume);
+        
     }
 
     public void Settings_Click()
